@@ -17,3 +17,6 @@ algorithm_globals.random_seed = 42
 import pandas as pd
 
 data = pd.read_csv("DataCleaned.csv", encoding = "ISO-8859-1", low_memory=False)
+
+dataNoNaN = data.fillna(data.mean())
+normalized = 2*(dataNoNaN-dataNoNaN.mean())/(dataNoNaN.max()-dataNoNaN.min())
