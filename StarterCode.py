@@ -12,3 +12,8 @@ from qiskit_machine_learning.algorithms.regressors import NeuralNetworkRegressor
 from qiskit_machine_learning.neural_networks import SamplerQNN, EstimatorQNN
 
 algorithm_globals.random_seed = 42
+
+# There may be some encoding issues, so we specify a specific encoding. Otherwise, the dataset can not be loaded.
+import pandas as pd
+
+data = pd.read_csv("DataCleaned.csv", encoding = "ISO-8859-1", low_memory=False)
